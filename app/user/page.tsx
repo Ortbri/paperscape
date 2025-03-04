@@ -1,7 +1,6 @@
+import { Profile } from '@/features/user/profile';
+import { Sub } from '@/features/user/sub';
 import { Suspense } from 'react';
-import Profile from '../../features/user/profile';
-import { Sub } from '../../features/user/sub';
-
 export default async function UserPage() {
   return (
     <div className="grid grid-cols-1 gap-4 px-4 lg:grid-cols-2">

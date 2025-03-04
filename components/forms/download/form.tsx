@@ -1,8 +1,8 @@
 'use client';
+import { genUserPresignedUrl } from '@/actions/cloudflare/genUserPresignedUrl';
 import { Download, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { generateDownloadUrlAction } from '../../../actions/cloudflare/actions';
 import { Button } from '../../ui/button';
 
 function DownloadForm({
@@ -17,7 +17,7 @@ function DownloadForm({
   async function handleDownloadAction() {
     setIsLoading(true);
     try {
-      const { data } = await generateDownloadUrlAction({ elementId: id, fileType: fileType });
+      const { data } = await genUserPresignedUrl({ elementId: id, fileType: fileType });
       if (!data?.downloadUrl) {
         toast.error('Failed to generate download URL');
         return;

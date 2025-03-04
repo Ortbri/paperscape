@@ -1,8 +1,8 @@
+import { genAdminPresignedUrl } from '@/actions/cloudflare/genAdminPresignedUrl';
 import axios from 'axios';
 import { useState } from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
-import { generatePresignedUrlsAction } from '../../../actions/cloudflare/actions';
 import { UploadElementSchema } from './schema';
 
 interface UploadProgress {
@@ -49,7 +49,7 @@ export function useFileUpload(form: UseFormReturn<z.infer<typeof UploadElementSc
 
   const handleUpload = async (data: z.infer<typeof UploadElementSchema>) => {
     try {
-      const result = await generatePresignedUrlsAction(data);
+      const result = await genAdminPresignedUrl(data);
 
       if (result.serverError) {
         form.setError('root', { message: result.serverError });

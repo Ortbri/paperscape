@@ -15,7 +15,7 @@ const baseUrl = `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`;
  * request a presigned url from cloudflare 
  * returns private signed urls for both the public and private bucket
  */
-export const generatePresignedUrlsAction = safeAction(
+export const genAdminPresignedUrl = safeAction(
   UploadElementSchema,
   async ({ title, SVGfile, JPGfile, DWGFTfile, DWGMfile }) => {
     const supabase = await createClient();

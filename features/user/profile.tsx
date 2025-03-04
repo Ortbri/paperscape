@@ -4,7 +4,7 @@ import { Button } from '../../components/ui/button';
 import { createClient } from '../../utils/supabase/server';
 import { InfoItem } from './InfoItem';
 
-export default async function Profile() {
+export const Profile = async () => {
   // TODO: add a cache to the user query?
   const supabase = await createClient();
   const {
@@ -41,4 +41,4 @@ export default async function Profile() {
       )}
     </div>
   );
-}
+};

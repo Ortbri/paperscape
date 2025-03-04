@@ -1,15 +1,12 @@
 import { Asterisk } from 'lucide-react';
 import Link from 'next/link';
-import { createClient } from '../utils/supabase/server';
-import { Avatar, AvatarFallback } from './ui/avatar';
-import { Button } from './ui/button';
 
-const MarketingHeader = async () => {
-  const supabase = await createClient();
-  // TODO: cached user needed + user preference via cookies
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+const MarketingHeader = () => {
+  // const supabase = await createClient();
+  // // TODO: cached user needed + user preference via cookies
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser();
   // console.log(user);
   // TODO:if you have a subscription, no pricing item shows there!
 
@@ -33,7 +30,7 @@ const MarketingHeader = async () => {
             <Link href={'/pricing'} className="text-xs">
               Pricing
             </Link>
-            {user ? (
+            {/* {user ? (
               <Link href={'/user'}>
                 <Avatar className="h-9 w-9">
                   <AvatarFallback className="bg-foreground text-card text-sm">
@@ -53,7 +50,7 @@ const MarketingHeader = async () => {
                   </Button>
                 </Link>
               </>
-            )}
+            )} */}
           </div>
         </div>
       </header>

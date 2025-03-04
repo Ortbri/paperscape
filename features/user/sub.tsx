@@ -1,13 +1,11 @@
 // 'use client';
 import { STRIPE_SUB_KV_CACHE } from '../../types/stripe';
-import { getURL } from '../../utils/helpers';
-import { stripe } from '../../utils/stripe/client';
 import { createClient } from '../../utils/supabase/server';
 import { kv } from '../../utils/upstash/client';
 import { InfoItem } from './InfoItem';
 import SubPortalButton from './sub-portal-button';
 
-export async function Sub() {
+export const Sub = async () => {
   // TODO: use cache
   const supabase = await createClient();
   const {
@@ -29,25 +27,25 @@ export async function Sub() {
     `stripe:customer_id:${stripeCustomerId}`
   );
 
-  const handleSub = async () => {
-    'use server';
-    // todo
-    // console.log('testing');
-    const stripeCustomerId = (await kv.get(`stripe:user_id:${user.id}`)) as string;
-    if (!stripeCustomerId) {
-      return { error: 'Customer not found.' };
-    }
+  // const handleSub = async () => {
+  //   'use server';
+  //   // todo
+  //   // console.log('testing');
+  //   const stripeCustomerId = (await kv.get(`stripe:user_id:${user.id}`)) as string;
+  //   if (!stripeCustomerId) {
+  //     return { error: 'Customer not found.' };
+  //   }
 
-    // Create a Stripe Customer Portal session
-    const portalSession = await stripe.billingPortal.sessions.create({
-      customer: stripeCustomerId,
-      return_url: getURL('/account'), // Redirects the user back to their account page after managing subscription
-    });
+  //   // Create a Stripe Customer Portal session
+  //   const portalSession = await stripe.billingPortal.sessions.create({
+  //     customer: stripeCustomerId,
+  //     return_url: getURL('/account'), // Redirects the user back to their account page after managing subscription
+  //   });
 
-    if (!portalSession.url) {
-      throw new Error('Could not create portal session.');
-    }
-  };
+  //   if (!portalSession.url) {
+  //     throw new Error('Could not create portal session.');
+  //   }
+  // };
 
   return (
     <div className="flex flex-col">
@@ -85,4 +83,4 @@ export async function Sub() {
       )}
     </div>
   );
-}
+};
