@@ -8,7 +8,7 @@ function CompanyInfo() {
     <div className="flex flex-row items-center justify-between gap-2">
       <div className="flex flex-row items-center gap-0">
         <Asterisk className="h-6 w-6" />
-        <h4 className="text-lg font-bold">COMMON</h4>
+        <h4 className="text-lg font-bold">Paperscape</h4>
       </div>
 
       <ThemeToggle />
@@ -21,7 +21,7 @@ function Rights() {
   return (
     <div className="flex items-center text-xs text-muted-foreground">
       <div className="flex flex-1 flex-row items-center gap-2">
-        <p>&copy; {new Date().getFullYear()} Copyright Common Project. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Copyright UWU LLC. All rights reserved.</p>
       </div>
       <div className="flex flex-row items-center gap-8">
         <p>Privacy Policy</p>

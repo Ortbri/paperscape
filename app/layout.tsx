@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Our Common Project - Free DWG Assets for Architects and Designers',
+  title: 'Paperscape.io - Free DWG Assets for Architects and Designers',
   description:
     'Download free DWG assets for your projects. Featuring a wide variety of CAD blocks, details, and drawings for architects and designers. Enhance your designs with our high-quality resources.',
   keywords: [

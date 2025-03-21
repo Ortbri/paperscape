@@ -8,7 +8,7 @@ function Tos() {
       <div className="prose dark:prose-invert">
         <h2 className="text-xl font-semibold">1. Acceptance of Terms</h2>
         <p className="mb-4">
-          By accessing and using Common, you agree to be bound by these Terms of Service.
+          By accessing and using Paperscape.io, you agree to be bound by these Terms of Service.
         </p>
 
         <h2 className="text-xl font-semibold">2. Use License</h2>
